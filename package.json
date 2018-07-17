@@ -11,19 +11,17 @@
   },
   "author": "Jessica Schmitz",
   "license": "ISC",
-    "dependencies": {
-      "file-loader": "^1.1.6",
-      "moment": "^2.18.1",
-      "prop-types": "^15.5.10",
-      "react": "^15.5.4",
-      "react-dom": "^15.5.4",
-      "react-redux": "^5.0.6",
-      "react-router-dom": "^4.0.0",
-      "redux": "^3.7.2",
-      "styled-jsx": "^2.2.7",
-      "url-loader": "^0.6.2",
-      "uuid": "^3.2.1"
-    },
+  "dependencies": {
+    "file-loader": "^1.1.6",
+    "moment": "^2.18.1",
+    "prop-types": "^15.5.10",
+    "react": "^15.5.4",
+    "react-dom": "^15.5.4",
+    "react-redux": "^5.0.6",
+    "redux": "^3.7.2",
+    "styled-jsx": "^2.2.7",
+    "uuid": "^3.2.1"
+  },
   "devDependencies": {
     "babel-core": "^6.24.1",
     "babel-jest": "^20.0.3",
@@ -37,7 +35,10 @@
     "html-webpack-plugin": "^2.29.0",
     "jest": "^20.0.4",
     "react-hot-loader": "^3.0.0-beta.7",
+    "react-router-dom": "^4.3.1",
+    "resolve-url-loader": "^2.3.0",
     "style-loader": "^0.18.2",
+    "url-loader": "^1.0.1",
     "webpack": "^2.6.0",
     "webpack-dev-server": "^2.5.0"
   }

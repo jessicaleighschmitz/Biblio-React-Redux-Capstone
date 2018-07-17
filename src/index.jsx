@@ -5,16 +5,23 @@ import { HashRouter } from 'react-router-dom';
 import { createStore } from 'redux';
 import { Provider } from 'react-redux';
 import rootReducer from './reducers';
+import { AppContainer } from 'react-hot-loader';
 
 const store = createStore(rootReducer);
+//
+// let unsubscribe = store.subscribe(() =>
+//   console.log(store.getState())
+// );
 
 const render = (Component) => {
   ReactDOM.render(
-    <HashRouter>
-      <Provider store={store}>
-        <Component/>
-      </Provider>
-    </HashRouter>,
+    <AppContainer>
+      <HashRouter>
+        <Provider store={store}>
+          <Component/>
+        </Provider>
+      </HashRouter>
+  </AppContainer>,
     document.getElementById('react-app-root')
   );
 };
