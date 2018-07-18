@@ -56,7 +56,7 @@ function LandingPage() {
           margin-top: 23px;
         }
         input::placeholder{
-          color: #F8C170;;
+          color: #F8C170;
           padding-left: 23px;
           font-size: 18px;
         }

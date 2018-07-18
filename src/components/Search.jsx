@@ -1,13 +1,13 @@
 import React from 'react';
 
-function LineUp() {
+function Search() {
   return (
     <div>
       <div>
-        <p>bookshelf works</p>
+        <p>search works</p>
       </div>
     </div>
   );
 }
 
-export default LineUp;
+export default Search;
