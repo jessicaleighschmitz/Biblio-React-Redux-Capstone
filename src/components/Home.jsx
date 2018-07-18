@@ -1,9 +1,12 @@
 import React from 'react';
+import Footer from './Footer';
 
 function Home(){
   return(
     <div>
-      <p>home works</p>
+      <div>
+        <Footer />
+      </div>
     </div>
   );
 }

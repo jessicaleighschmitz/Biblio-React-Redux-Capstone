@@ -1,5 +1,5 @@
 import React from 'react';
-import Footer from './Footer';
+
 import landingPhoto from './../assets/images/landing-header-image.svg';
 import { Link } from 'react-router-dom';
 
@@ -7,21 +7,22 @@ import { Link } from 'react-router-dom';
 function LandingPage() {
   return (
     <div>
-      <div>
+      <div className='container'>
         <div className='main-header'>
           <h1 className="main-title">Biblio</h1>
           <p>Your Next Adventure</p>
         </div>
         <div className='login'>
-          <input type='text' placeholder='username' />
-          <input type='text' placeholder='password' />
+          <input className='username' type='text' placeholder='username' />
+          <input className='password' type='text' placeholder='password' />
           <Link to='/home'><button>Go!</button></Link>
         </div>
-
-        <Footer />
       </div>
       <style jsx>{`
           @import url('https://fonts.googleapis.com/css?family=Lobster|Montserrat');
+        .container{
+          max-width: 600px;
+        }
         .main-header{
           background-image: url(${landingPhoto});
           background-repeat: no-repeat;
@@ -30,7 +31,7 @@ function LandingPage() {
           height: 100%;
           width: 100%;
           min-height: 800px;
-          max-width: 600px;
+
           display:flex;
           flex-direction: column;
           justify-content: center;
@@ -47,6 +48,37 @@ function LandingPage() {
           color: #fff;
           font-family: 'Montserrat', sans-serif;
         }
+        .username, .password{
+          border-radius: 6px;
+          border: solid 1px #F8C170;
+          width: 223px;
+          height: 33px;
+          margin-top: 23px;
+        }
+        input::placeholder{
+          color: #F8C170;;
+          padding-left: 23px;
+          font-size: 18px;
+        }
+        button{
+          background-color: #F8C170;;
+          border-radius: 6px;
+          width: 123px;
+          height: 33px;
+          margin-top: 23px;
+        }
+        .login{
+          display: flex;
+          flex-wrap: wrap;
+          flex-direction: column;
+          align-items: center;
+        }
+        button{
+          color: #fff;
+          font-weight: bold;
+          font-size: 18px;
+        }
+
             `}
       </style>
     </div>
