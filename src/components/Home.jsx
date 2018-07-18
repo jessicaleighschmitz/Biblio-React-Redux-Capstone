@@ -15,7 +15,7 @@ function Home(){
         </div>
         <div className='recommended'>
           <h3>Recommended</h3>
-          <p>book list that dont include the read or to read books</p>
+          <p>book list that doesnt include the read or to read books</p>
         </div>
         <Footer />
       </div>
