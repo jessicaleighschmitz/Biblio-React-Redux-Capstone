@@ -4,8 +4,14 @@ function ReadingNowPreviewItem (){
   return (
     <div>
       <div>
-        ReadingNowPreviewItem works!
+        <p>ReadingNowPreviewItem works!</p>
       </div>
+      <style jsx>{`
+        @import url('https://fonts.googleapis.com/css?family=Montserrat');
+        p{
+          font-family: 'Montserrat', sans-serif;
+        }
+      `}</style>
     </div>
   );
 }

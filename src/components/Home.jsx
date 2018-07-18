@@ -12,7 +12,6 @@ function Home(){
           <h1>Biblio</h1>
         </div>
         <div className='reading-now-preview'>
-          <h3>Reading Now</h3>
           <ReadingNowPreview />
         </div>
         <div className='recommended'>
@@ -36,9 +35,9 @@ function Home(){
           h1{
             color: #fff;
             font-family: 'Lobster', cursive;
-            font-size: 2.6rem;
+            font-size: 3rem;
             text-align: center;
-            padding-top: 20px;
+            padding-top: 40px;
           }
           .reading-now-preview{
             width: 100%;
@@ -50,6 +49,9 @@ function Home(){
           }
           .reading-now-preview, .recommended{
             font-family: 'Montserrat', sans-serif;
+          }
+          .recommended{
+            margin-left: 20px;
           }
             `}</style>
     </div>
