@@ -5,10 +5,11 @@ import headerMain from '././../assets/images/headerMain.png';
 import { connect } from 'react-redux';
 import PropTypes from 'prop-types';
 import BookShelfItem from './BookShelfItem';
-import bookList from './../constants/InitialState.js';
 
 
-function Home(props){
+
+function Home(props) {
+    console.log(props.selectedBook.bookList);
   return(
     <div>
       <div>
@@ -20,8 +21,9 @@ function Home(props){
         </div>
         <div className='recommended'>
           <h3>Recommended</h3>
-          {Object.keys(props.bookList).map(function(bookId){
-            let book = props.bookList[bookId];
+          {Object.keys(props.selectedBook.bookList).map(function(bookId){
+            let book = props.selectedBook.bookList[bookId];
+            console.log(book);
             return <BookShelfItem
               title={book.title}
               image={book.image}
@@ -73,7 +75,6 @@ function Home(props){
 }
 
 Home.propTypes = {
-  bookList: PropTypes.object,
   title: PropTypes.string,
   author: PropTypes.string,
   year: PropTypes.number,
@@ -86,7 +87,6 @@ Home.propTypes = {
 
 const mapStateToProps = state => {
   return {
-    bookList: state.bookList,
     selectedBook: state.selectedBook,
   };
 };

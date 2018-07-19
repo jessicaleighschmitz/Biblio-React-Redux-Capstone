@@ -5,8 +5,9 @@ import { HashRouter } from 'react-router-dom';
 import { createStore } from 'redux';
 import { Provider } from 'react-redux';
 import rootReducer from './reducers';
-import { AppContainer } from 'react-hot-loader';
 import selectedBookReducer from './reducers/selectedBookReducer';
+import initialState from './constants/InitialState';
+
 
 const store = createStore(rootReducer);
 //
@@ -16,13 +17,11 @@ const store = createStore(rootReducer);
 
 const render = (Component) => {
   ReactDOM.render(
-    <AppContainer>
       <HashRouter>
         <Provider store={store}>
           <Component/>
         </Provider>
-      </HashRouter>
-    </AppContainer>,
+      </HashRouter>,
     document.getElementById('react-app-root')
   );
 };

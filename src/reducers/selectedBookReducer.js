@@ -2,19 +2,25 @@ import constants from './../constants';
 const { initialState, types } = constants;
 
 const selectedBookReducer = (state = initialState, action) => {
-  switch (action.type) {
-  case types.SELECT_BOOK:
-    let newState = {
-      bookList: initialState.bookList,
-      selectedBook: action.newSelectedBookId,
-    };
-    return newState;
-  default:
-    return state;
-  }
-};
+  return state;
+}
 
 export default selectedBookReducer;
+
+// const selectedBookReducer = (state = initialState, action) => {
+//   switch (action.type) {
+//   case types.SELECT_BOOK:
+//     let newState = {
+//       bookList: initialState.bookList,
+//       selectedBook: action.newSelectedBookId,
+//     };
+//     return newState;
+//   default:
+//     return state;
+//   }
+// };
+//
+// export default selectedBookReducer;
 
 // const lyricChangeReducer = (state = initialState.songsById, action) => {
 //   let newSongsByIdEntry;
