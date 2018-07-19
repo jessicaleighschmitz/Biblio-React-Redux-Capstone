@@ -1,7 +1,7 @@
-import React from 'react';
-import PropTypes from 'prop-types';
-import { connect } from 'react-redux';
-// 
+// import React from 'react';
+// import PropTypes from 'prop-types';
+// import { connect } from 'react-redux';
+//
 // const SongDisplay = ({ dispatch, song }) => {
 //   const { title, artist, songArray, arrayPosition, id } = song;
 //   const currentLine = songArray[arrayPosition];

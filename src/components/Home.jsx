@@ -2,9 +2,13 @@ import React from 'react';
 import Footer from './Footer';
 import ReadingNowPreview from './ReadingNowPreview';
 import headerMain from '././../assets/images/headerMain.png';
+import { connect } from 'react-redux';
+import PropTypes from 'prop-types';
+import BookShelfItem from './BookShelfItem';
+import bookList from './../constants/InitialState.js';
 
 
-function Home(){
+function Home(props){
   return(
     <div>
       <div>
@@ -16,7 +20,17 @@ function Home(){
         </div>
         <div className='recommended'>
           <h3>Recommended</h3>
-          <p>book list that doesnt include the read or to read books</p>
+          {Object.keys(props.bookList).map(function(bookId){
+            let book = props.bookList[bookId];
+            return <BookShelfItem
+              title={book.title}
+              image={book.image}
+              author={book.author}
+              key={bookId}
+              id={bookId}
+            />;
+
+          })}
         </div>
         <Footer />
       </div>
@@ -58,4 +72,23 @@ function Home(){
   );
 }
 
-export default Home;
+Home.propTypes = {
+  bookList: PropTypes.object,
+  title: PropTypes.string,
+  author: PropTypes.string,
+  year: PropTypes.number,
+  read: PropTypes.bool,
+  readingNow: PropTypes.bool,
+  blurb: PropTypes.string,
+  key: PropTypes.string,
+  id: PropTypes.string
+};
+
+const mapStateToProps = state => {
+  return {
+    bookList: state.bookList,
+    selectedBook: state.selectedBook,
+  };
+};
+
+export default connect(mapStateToProps)(Home);

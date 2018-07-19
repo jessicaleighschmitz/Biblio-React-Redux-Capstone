@@ -6,6 +6,7 @@ import { createStore } from 'redux';
 import { Provider } from 'react-redux';
 import rootReducer from './reducers';
 import { AppContainer } from 'react-hot-loader';
+import selectedBookReducer from './reducers/selectedBookReducer';
 
 const store = createStore(rootReducer);
 //

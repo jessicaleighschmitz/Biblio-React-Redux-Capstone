@@ -1,12 +1,23 @@
 import constants from "./../../src/constants";
 // import songChangeReducer from './../../src/reducers/songChangeReducer';
-// import lyricChangeReducer from './../../src/reducers/lyricChangeReducer';
+import changeListReducer from './../../src/reducers/selectedBookReducer';
 // import rootReducer from './../../src/reducers/';
 import { createStore } from 'redux';
 
+describe('biblio app', () => {
+
+
+  describe('selectedBookReducer', () => {
+    it('Should accept and return initial state.', () => {
+      expect(selectedBookReducer(initialState.booksById,{ type: null })).toEqual(initialState.booksById);
+
+    })
+  })
+    const { initialState } = constants;
+    const store = createStore(changeListReducer, bookList);
+});
+
 // describe('Karaoke App', () => {
-//   const { initialState, types } = constants;
-//   const store = createStore(rootReducer, initialState);
 //
 //   describe('lyricChangeReducer', () => {
 //     it('Should accept and return initial state.', () => {
