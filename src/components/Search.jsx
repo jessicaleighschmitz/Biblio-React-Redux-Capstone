@@ -32,9 +32,11 @@ function Search(props) {
         <Footer />
       </div>
       <style jsx>{`
+        @import url('https://fonts.googleapis.com/css?family=Montserrat');
         .container{
           max-width: 600px;
           margin: auto;
+          font-family: 'Montserrat', sans-serif;
         }
         .header{
           background-image: url(${headerMain});

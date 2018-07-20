@@ -3,12 +3,12 @@ import PropTypes from 'prop-types';
 
 function BookShelfItem(props){
   const bookInfo =
-    <div>
+    <div className='each-book'>
       <div>
         <img src={props.image} />
       </div>
       <div>
-        <p>{props.title}</p>
+        <p className='title'>{props.title}</p>
         <em>by {props.author}</em>
       </div>
     </div>;
@@ -18,7 +18,13 @@ function BookShelfItem(props){
         {bookInfo}
       </div>
       <style jsx>{`
-
+      
+          .each-book{
+            padding: 20px;
+          }
+          .title{
+            font-weight: bold;
+          }
       `}</style>
     </div>
   );

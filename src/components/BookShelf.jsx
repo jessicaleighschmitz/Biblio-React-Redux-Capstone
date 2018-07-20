@@ -58,6 +58,7 @@ function BookShelf(props) {
           font-size: 2.6rem;
           text-align: center;
           padding-top: 40px;
+          margin-top: 0;
         }
         .reading-now-preview{
           width: 100%;
