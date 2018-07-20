@@ -3,7 +3,7 @@ import Footer from './Footer';
 import ReadingNowPreview from './ReadingNowPreview';
 import headerMain from '././../assets/images/headerMain.png';
 import { connect } from 'react-redux';
-import PropTypes from 'prop-types';
+// import PropTypes from 'prop-types';
 import BookShelfItem from './BookShelfItem';
 
 function BookShelf(props) {
@@ -18,17 +18,16 @@ function BookShelf(props) {
         </div>
         <div className='book-list'>
           <h3>Your Completed Shelf</h3>
-              {Object.keys(props.selectedBook.bookList).map(function(bookId){
-                let book = props.selectedBook.bookList[bookId];
-                console.log(book);
-                return <BookShelfItem
-                  title={book.title}
-                  image={book.image}
-                  author={book.author}
-                  key={bookId}
-                  id={bookId}
-                />;
-              })}
+          {Object.keys(props.selectedBook.bookList).map(function(bookId){
+            let book = props.selectedBook.bookList[bookId];
+            return <BookShelfItem
+              title={book.title}
+              image={book.image}
+              author={book.author}
+              key={bookId}
+              id={bookId}
+            />;
+          })}
         </div>
         <Footer />
       </div>

@@ -10,24 +10,19 @@ import LineUp from './LineUp';
 
 
 
-class App extends React.Component{
-  constructor(props) {
-    super(props);
-  }
-  render(){
-    return (
-      <div>
-        <Switch>
-          <Route exact path='/' component={LandingPage} />
-          <Route path='/home' component={Home} />
-          <Route path='/bookshelf' component={BookShelf} />
-          <Route path='/search' component={Search} />
-          <Route path='/lineup' component={LineUp} />
-        </Switch>
-      </div>
-    );
-
-  }
+function App(){
+  return (
+    <div>
+      <Switch>
+        <Route exact path='/' component={LandingPage} />
+        <Route path='/home' component={Home} />
+        <Route path='/bookshelf' component={BookShelf} />
+        <Route path='/search' component={Search} />
+        <Route path='/lineup' component={LineUp} />
+      </Switch>
+    </div>
+  );
 }
+
 
 export default App;

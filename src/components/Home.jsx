@@ -3,11 +3,10 @@ import Footer from './Footer';
 import ReadingNowPreview from './ReadingNowPreview';
 import headerMain from '././../assets/images/headerMain.png';
 import { connect } from 'react-redux';
-import PropTypes from 'prop-types';
+// import PropTypes from 'prop-types';
 import BookShelfItem from './BookShelfItem';
 
 function Home(props) {
-    console.log(props.selectedBook.bookList);
   return(
     <div>
       <div>
@@ -21,7 +20,6 @@ function Home(props) {
           <h3>Recommended</h3>
           {Object.keys(props.selectedBook.bookList).map(function(bookId){
             let book = props.selectedBook.bookList[bookId];
-            console.log(book);
             return <BookShelfItem
               title={book.title}
               image={book.image}
@@ -72,17 +70,17 @@ function Home(props) {
   );
 }
 
-Home.propTypes = {
-  title: PropTypes.string,
-  author: PropTypes.string,
-  year: PropTypes.number,
-  image: PropTypes.string,
-  read: PropTypes.bool,
-  readingNow: PropTypes.bool,
-  blurb: PropTypes.string,
-  key: PropTypes.string,
-  id: PropTypes.string,
-};
+// Home.propTypes = {
+//   title: PropTypes.string,
+//   author: PropTypes.string,
+//   year: PropTypes.number,
+//   image: PropTypes.string,
+//   read: PropTypes.bool,
+//   readingNow: PropTypes.bool,
+//   blurb: PropTypes.string,
+//   key: PropTypes.string,
+//   id: PropTypes.string,
+// };
 
 
 const mapStateToProps = state => {

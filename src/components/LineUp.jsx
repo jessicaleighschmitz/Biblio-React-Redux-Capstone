@@ -2,7 +2,7 @@ import React from 'react';
 import Footer from './Footer';
 import headerMain from '././../assets/images/headerMain.png';
 import { connect } from 'react-redux';
-import PropTypes from 'prop-types';
+// import PropTypes from 'prop-types';
 import BookShelfItem from './BookShelfItem';
 
 function LineUp(props) {
@@ -15,7 +15,6 @@ function LineUp(props) {
         <div className='lineup-list'>
           {Object.keys(props.selectedBook.bookList).map(function(bookId){
             let book = props.selectedBook.bookList[bookId];
-            console.log(book);
             return <BookShelfItem
               title={book.title}
               image={book.image}
