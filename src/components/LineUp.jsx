@@ -2,8 +2,8 @@ import React from 'react';
 import Footer from './Footer';
 import headerMain from '././../assets/images/headerMain.png';
 import { connect } from 'react-redux';
-// import PropTypes from 'prop-types';
 import BookShelfItem from './BookShelfItem';
+import PropTypes from 'prop-types';
 
 function LineUp(props) {
   return (
@@ -52,6 +52,10 @@ function LineUp(props) {
     </div>
   );
 }
+
+LineUp.propTypes = {
+  selectedBook: PropTypes.object,
+};
 
 const mapStateToProps = state => {
   return {

@@ -3,7 +3,7 @@ import Footer from './Footer';
 import headerMain from '././../assets/images/headerMain.png';
 import blackSearchIcon from './../assets/images/blackSearchIcon.png';
 import { connect } from 'react-redux';
-// import PropTypes from 'prop-types';
+import PropTypes from 'prop-types';
 import BookShelfItem from './BookShelfItem';
 
 function Search(props) {
@@ -54,17 +54,9 @@ function Search(props) {
   );
 }
 
-// Search.propTypes = {
-//   title: PropTypes.string,
-//   author: PropTypes.string,
-//   year: PropTypes.number,
-//   image: PropTypes.string,
-//   read: PropTypes.bool,
-//   readingNow: PropTypes.bool,
-//   blurb: PropTypes.string,
-//   key: PropTypes.string,
-//   id: PropTypes.string,
-// };
+Search.propTypes = {
+  selectedBook: PropTypes.object,
+};
 
 
 const mapStateToProps = state => {

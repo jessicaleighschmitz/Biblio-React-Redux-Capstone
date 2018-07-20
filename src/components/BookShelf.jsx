@@ -3,8 +3,8 @@ import Footer from './Footer';
 import ReadingNowPreview from './ReadingNowPreview';
 import headerMain from '././../assets/images/headerMain.png';
 import { connect } from 'react-redux';
-// import PropTypes from 'prop-types';
 import BookShelfItem from './BookShelfItem';
+import PropTypes from 'prop-types';
 
 function BookShelf(props) {
   return (
@@ -66,6 +66,10 @@ function BookShelf(props) {
     </div>
   );
 }
+
+BookShelf.propTypes = {
+  selectedBook: PropTypes.object,
+};
 
 const mapStateToProps = state => {
   return {

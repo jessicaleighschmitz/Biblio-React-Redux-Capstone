@@ -3,8 +3,8 @@ import Footer from './Footer';
 import ReadingNowPreview from './ReadingNowPreview';
 import headerMain from '././../assets/images/headerMain.png';
 import { connect } from 'react-redux';
-// import PropTypes from 'prop-types';
 import BookShelfItem from './BookShelfItem';
+import PropTypes from 'prop-types';
 
 function Home(props) {
   return(
@@ -70,17 +70,9 @@ function Home(props) {
   );
 }
 
-// Home.propTypes = {
-//   title: PropTypes.string,
-//   author: PropTypes.string,
-//   year: PropTypes.number,
-//   image: PropTypes.string,
-//   read: PropTypes.bool,
-//   readingNow: PropTypes.bool,
-//   blurb: PropTypes.string,
-//   key: PropTypes.string,
-//   id: PropTypes.string,
-// };
+Home.propTypes = {
+  selectedBook: PropTypes.object,
+};
 
 
 const mapStateToProps = state => {
