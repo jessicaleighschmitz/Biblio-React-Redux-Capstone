@@ -20,8 +20,8 @@ function BookShelf(props) {
           <h3>Your Completed Shelf</h3>
           {Object.keys(props.selectedBook.bookList).map(function(bookId){
             let book = props.selectedBook.bookList[bookId];
-            console.log(props.selectedBook.bookList.read);
-            if (props.selectedBook.bookList.read){
+            console.log(book.read);
+            if (book.read){
             return <BookShelfItem
                 title={book.title}
                 image={book.image}
@@ -29,8 +29,6 @@ function BookShelf(props) {
                 key={bookId}
                 id={bookId}
                 />;
-            } else{
-              return <p>You havent read any books yet.</p>;
             }
 
         <p>You havent read any books yet.</p>
