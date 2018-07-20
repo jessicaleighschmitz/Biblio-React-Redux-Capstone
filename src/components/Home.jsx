@@ -18,16 +18,21 @@ function Home(props) {
         </div>
         <div className='recommended'>
           <h3>Recommended</h3>
-          {Object.keys(props.selectedBook.bookList).map(function(bookId){
-            let book = props.selectedBook.bookList[bookId];
-            return <BookShelfItem
-              title={book.title}
-              image={book.image}
-              author={book.author}
-              key={bookId}
-              id={bookId}
-            />;
-          })}
+          <div className='home-grid'>
+
+            {Object.keys(props.selectedBook.bookList).map(function(bookId){
+              let book = props.selectedBook.bookList[bookId];
+              if(!book.read && !book.lineup){
+                return <BookShelfItem
+                  title={book.title}
+                  image={book.image}
+                  author={book.author}
+                  key={bookId}
+                  id={bookId}
+                  />;
+              }
+            })}
+          </div>
         </div>
         <Footer />
       </div>
@@ -69,6 +74,13 @@ function Home(props) {
           .recommended{
             margin-left: 20px;
             margin-top: 200px;
+          }
+          .home-grid{
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(170px, 1fr));
+            grid-gap: 10px;
+            grid-auto-flow: dense;
+
           }
             `}</style>
     </div>

@@ -12,7 +12,7 @@ function LineUp(props) {
         <div className='header'>
           <h1>Line Up</h1>
         </div>
-        <div className='lineup-list'>
+        <div className='lineup-grid'>
           {Object.keys(props.selectedBook.bookList).map(function(bookId){
             let book = props.selectedBook.bookList[bookId];
             if (book.lineup){
@@ -58,10 +58,11 @@ function LineUp(props) {
         } img{
           max-height: 200px;
         }
-        .lineup-list{
-          width: 100%;
-          height: 100%;
-          margin-top: 0;
+        .lineup-grid{
+          display: grid;
+          grid-template-columns: repeat(auto-fit, minmax(170px, 1fr));
+          grid-gap: 10px;
+          grid-auto-flow: dense;
         }
       `}</style>
     </div>

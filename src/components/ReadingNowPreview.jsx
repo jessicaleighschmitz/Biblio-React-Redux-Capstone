@@ -8,7 +8,7 @@ function ReadingNowPreview (){
         <h3>Reading Now:</h3>
         <div className='reading-now-flex'>
           <div>
-            <img src={cleaning} alt='reading now book' />
+            <img src={cleaning} className='reading-now-img' alt='reading now book' />
           </div>
           <div>
             <p>A Manual for Cleaning Women</p>
@@ -24,6 +24,9 @@ function ReadingNowPreview (){
         }
         img{
           max-height: 200px;
+        }
+        .reading-now-img{
+          max-height: 150px;
         }
         .reading-now-flex{
           display: flex;

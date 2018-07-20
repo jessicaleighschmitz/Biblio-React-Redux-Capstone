@@ -17,7 +17,7 @@ function Search(props) {
           <img src={blackSearchIcon} />
           <input type='text' placeholder='Title, Author, ISBN' />
         </div>
-        <div className='search-list'>
+        <div className='search-grid'>
           {Object.keys(props.selectedBook.bookList).map(function(bookId){
             let book = props.selectedBook.bookList[bookId];
             return <BookShelfItem
@@ -69,6 +69,12 @@ function Search(props) {
           justify-content: center;
           align-items: center;
           margin: 50px 0;
+        }
+        .search-grid{
+          display: grid;
+          grid-template-columns: repeat(auto-fit, minmax(170px, 1fr));
+          grid-gap: 10px;
+          grid-auto-flow: dense;
         }
       `}</style>
     </div>

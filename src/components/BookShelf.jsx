@@ -18,19 +18,21 @@ function BookShelf(props) {
         </div>
         <div className='book-list'>
           <h3>Your Completed Shelf</h3>
-          {Object.keys(props.selectedBook.bookList).map(function(bookId){
-            let book = props.selectedBook.bookList[bookId];
-            console.log(book.read);
-            if (book.read){
-            return <BookShelfItem
-                title={book.title}
-                image={book.image}
-                author={book.author}
-                key={bookId}
-                id={bookId}
-                />;
-            }
-      })}
+          <div className='bookshelf-grid'>
+            {Object.keys(props.selectedBook.bookList).map(function(bookId){
+              let book = props.selectedBook.bookList[bookId];
+              console.log(book.read);
+              if (book.read){
+                return <BookShelfItem
+                  title={book.title}
+                  image={book.image}
+                  author={book.author}
+                  key={bookId}
+                  id={bookId}
+                  />;
+              }
+            })}
+          </div>
     </div>
         <Footer />
       </div>
@@ -68,6 +70,12 @@ function BookShelf(props) {
         .book-list{
           font-family: 'Montserrat', sans-serif;
           margin: 200px 0 0 20px;
+        }
+        .bookshelf-grid{
+          display: grid;
+          grid-template-columns: repeat(auto-fit, minmax(170px, 1fr));
+          grid-gap: 10px;
+          grid-auto-flow: dense;
         }
       `}</style>
     </div>
