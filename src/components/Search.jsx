@@ -2,8 +2,11 @@ import React from 'react';
 import Footer from './Footer';
 import headerMain from '././../assets/images/headerMain.png';
 import blackSearchIcon from './../assets/images/blackSearchIcon.png';
+import { connect } from 'react-redux';
+import PropTypes from 'prop-types';
+import BookShelfItem from './BookShelfItem';
 
-function Search() {
+function Search(props) {
   return (
     <div>
       <div>
@@ -13,6 +16,19 @@ function Search() {
         <div className='search-form'>
           <img src={blackSearchIcon} />
           <input type='text' placeholder='Title, Author, ISBN' />
+        </div>
+        <div className='search-list'>
+          {Object.keys(props.selectedBook.bookList).map(function(bookId){
+            let book = props.selectedBook.bookList[bookId];
+            console.log(book);
+            return <BookShelfItem
+              title={book.title}
+              image={book.image}
+              author={book.author}
+              key={bookId}
+              id={bookId}
+            />;
+          })}
         </div>
         <Footer />
       </div>
@@ -39,4 +55,23 @@ function Search() {
   );
 }
 
-export default Search;
+Search.propTypes = {
+  title: PropTypes.string,
+  author: PropTypes.string,
+  year: PropTypes.number,
+  image: PropTypes.string,
+  read: PropTypes.bool,
+  readingNow: PropTypes.bool,
+  blurb: PropTypes.string,
+  key: PropTypes.string,
+  id: PropTypes.string,
+};
+
+
+const mapStateToProps = state => {
+  return {
+    selectedBook: state.selectedBook,
+  };
+};
+
+export default connect(mapStateToProps)(Search);

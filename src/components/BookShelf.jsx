@@ -2,8 +2,11 @@ import React from 'react';
 import Footer from './Footer';
 import ReadingNowPreview from './ReadingNowPreview';
 import headerMain from '././../assets/images/headerMain.png';
+import { connect } from 'react-redux';
+import PropTypes from 'prop-types';
+import BookShelfItem from './BookShelfItem';
 
-function BookShelf() {
+function BookShelf(props) {
   return (
     <div>
       <div>
@@ -15,7 +18,17 @@ function BookShelf() {
         </div>
         <div className='book-list'>
           <h3>Your Completed Shelf</h3>
-          <p>book list here</p>
+              {Object.keys(props.selectedBook.bookList).map(function(bookId){
+                let book = props.selectedBook.bookList[bookId];
+                console.log(book);
+                return <BookShelfItem
+                  title={book.title}
+                  image={book.image}
+                  author={book.author}
+                  key={bookId}
+                  id={bookId}
+                />;
+              })}
         </div>
         <Footer />
       </div>
@@ -55,4 +68,10 @@ function BookShelf() {
   );
 }
 
-export default BookShelf;
+const mapStateToProps = state => {
+  return {
+    selectedBook: state.selectedBook,
+  };
+};
+
+export default connect(mapStateToProps)(BookShelf);
