@@ -9,7 +9,7 @@ import BookShelfItem from './BookShelfItem';
 
 
 function Home(props) {
-    console.log(props.selectedBook.bookList);
+  console.log(props.selectedBook.bookList);
   return(
     <div>
       <div>
@@ -78,6 +78,7 @@ Home.propTypes = {
   title: PropTypes.string,
   author: PropTypes.string,
   year: PropTypes.number,
+  image: PropTypes.string,
   read: PropTypes.bool,
   readingNow: PropTypes.bool,
   blurb: PropTypes.string,

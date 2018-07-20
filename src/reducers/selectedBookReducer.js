@@ -3,7 +3,7 @@ const { initialState, types } = constants;
 
 const selectedBookReducer = (state = initialState, action) => {
   return state;
-}
+};
 
 export default selectedBookReducer;
 
