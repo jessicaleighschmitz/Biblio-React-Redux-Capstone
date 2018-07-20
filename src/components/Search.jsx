@@ -8,7 +8,7 @@ import BookShelfItem from './BookShelfItem';
 
 function Search(props) {
   return (
-    <div>
+    <div className='container'>
       <div>
         <div className='header'>
           <h1>Search</h1>
@@ -32,6 +32,10 @@ function Search(props) {
         <Footer />
       </div>
       <style jsx>{`
+        .container{
+          max-width: 600px;
+          margin: auto;
+        }
         .header{
           background-image: url(${headerMain});
           background-repeat: no-repeat;
@@ -48,6 +52,23 @@ function Search(props) {
           font-size: 2.6rem;
           text-align: center;
           padding-top: 40px;
+          margin: 0;
+        }
+        img{
+          max-height: 200px;
+        }
+        input{
+          height: 33px;
+          width: 270px;
+          border-radius: 6px;
+          border: none;
+          background-color: rgba(248, 193, 112, .8);
+        }
+        .search-form{
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          margin: 50px 0;
         }
       `}</style>
     </div>

@@ -7,7 +7,7 @@ import PropTypes from 'prop-types';
 
 function LineUp(props) {
   return (
-    <div>
+    <div className='container'>
       <div>
         <div className='header'>
           <h1>Line Up</h1>
@@ -15,19 +15,27 @@ function LineUp(props) {
         <div className='lineup-list'>
           {Object.keys(props.selectedBook.bookList).map(function(bookId){
             let book = props.selectedBook.bookList[bookId];
+            if (book.lineup){
             return <BookShelfItem
-              title={book.title}
-              image={book.image}
-              author={book.author}
-              key={bookId}
-              id={bookId}
-            />;
+                title={book.title}
+                image={book.image}
+                author={book.author}
+                key={bookId}
+                id={bookId}
+                />;
+            }
           })}
         </div>
-        <Footer />
+        <div className='footer'>
+          <Footer />
+        </div>
       </div>
       <style jsx>{`
         @import url('https://fonts.googleapis.com/css?family=Lobster|Montserrat');
+        .container{
+          max-width: 600px;
+          margin: auto;
+        }
         div{
           font-family: 'Montserrat', sans-serif;
         }
@@ -47,6 +55,13 @@ function LineUp(props) {
           font-size: 2.6rem;
           text-align: center;
           padding-top: 40px;
+        } img{
+          max-height: 200px;
+        }
+        .lineup-list{
+          width: 100%;
+          height: 100%;
+          margin-top: 0;
         }
       `}</style>
     </div>

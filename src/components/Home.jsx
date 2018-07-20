@@ -8,7 +8,7 @@ import PropTypes from 'prop-types';
 
 function Home(props) {
   return(
-    <div>
+    <div className='container'>
       <div>
         <div className='header'>
           <h1>Biblio</h1>
@@ -33,6 +33,10 @@ function Home(props) {
       </div>
       <style jsx>{`
             @import url('https://fonts.googleapis.com/css?family=Lobster|Montserrat');
+            .container{
+              max-width: 600px;
+              margin: auto;
+            }
           .header{
             background-image: url(${headerMain});
             background-repeat: no-repeat;
@@ -49,6 +53,7 @@ function Home(props) {
             font-size: 3rem;
             text-align: center;
             padding-top: 40px;
+            margin: 0;
           }
           .reading-now-preview{
             width: 100%;

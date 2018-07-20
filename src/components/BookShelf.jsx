@@ -8,7 +8,7 @@ import PropTypes from 'prop-types';
 
 function BookShelf(props) {
   return (
-    <div>
+    <div className='container'>
       <div>
         <div className='header'>
           <h1>Book Shelf</h1>
@@ -30,14 +30,16 @@ function BookShelf(props) {
                 id={bookId}
                 />;
             }
-
-        <p>You havent read any books yet.</p>
       })}
     </div>
         <Footer />
       </div>
       <style jsx>{`
         @import url('https://fonts.googleapis.com/css?family=Montserrat');
+        .container{
+          max-width: 600px;
+          margin: auto;
+        }
         .header{
           background-image: url(${headerMain});
           background-repeat: no-repeat;
@@ -65,7 +67,7 @@ function BookShelf(props) {
         }
         .book-list{
           font-family: 'Montserrat', sans-serif;
-          margin-left: 20px;
+          margin: 200px 0 0 20px;
         }
       `}</style>
     </div>

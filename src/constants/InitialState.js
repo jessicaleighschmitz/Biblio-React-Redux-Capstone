@@ -51,7 +51,7 @@ export const initialState = {
       year: 2017,
       read: false,
       readingNow: false,
-      lineup: false,
+      lineup: true,
       blurb: 'Ipsum',
       image: toomuch,
       id: 4
@@ -73,7 +73,7 @@ export const initialState = {
       year: 2005,
       read: false,
       readingNow: false,
-      lineup: false,
+      lineup: true,
       blurb: 'Ipsum',
       image: hungry,
       id: 6
