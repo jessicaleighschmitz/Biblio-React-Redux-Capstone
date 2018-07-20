@@ -1,6 +1,7 @@
 import React from 'react';
 import LandingPage from './LandingPage';
 import {Switch, Route} from 'react-router-dom';
+import BookListContainer from './BookListContainer';
 import Home from './Home';
 import BookShelf from './BookShelf';
 import Search from './Search';
@@ -22,6 +23,7 @@ class App extends React.Component{
           <Route path='/bookshelf' component={BookShelf} />
           <Route path='/search' component={Search} />
           <Route path='/lineup' component={LineUp} />
+          <Route path='/bookList' component={BookListContainer} />
         </Switch>
       </div>
     );
