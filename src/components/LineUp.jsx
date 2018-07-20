@@ -1,8 +1,11 @@
 import React from 'react';
 import Footer from './Footer';
 import headerMain from '././../assets/images/headerMain.png';
+import { connect } from 'react-redux';
+import PropTypes from 'prop-types';
+import BookShelfItem from './BookShelfItem';
 
-function LineUp() {
+function LineUp(props) {
   return (
     <div>
       <div>
@@ -10,7 +13,17 @@ function LineUp() {
           <h1>Line Up</h1>
         </div>
         <div className='lineup-list'>
-          <p>list lineup will go here</p>
+          {Object.keys(props.selectedBook.bookList).map(function(bookId){
+            let book = props.selectedBook.bookList[bookId];
+            console.log(book);
+            return <BookShelfItem
+              title={book.title}
+              image={book.image}
+              author={book.author}
+              key={bookId}
+              id={bookId}
+            />;
+          })}
         </div>
         <Footer />
       </div>
@@ -41,4 +54,10 @@ function LineUp() {
   );
 }
 
-export default LineUp;
+const mapStateToProps = state => {
+  return {
+    selectedBook: state.selectedBook,
+  };
+};
+
+export default connect(mapStateToProps)(LineUp);
