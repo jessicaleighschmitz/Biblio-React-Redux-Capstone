@@ -8,6 +8,7 @@ import pond from './../assets/images/pond.jpg';
 import road from './../assets/images/road.jpg';
 import savage from './../assets/images/savage.jpg';
 import toomuch from './../assets/images/toomuch.jpg';
+import world from './../assets/images/coates.jpg';
 
 export const initialState = {
   selectedBook: null,
@@ -15,7 +16,7 @@ export const initialState = {
     1: {
       title: 'The Road',
       author: 'Cormac McCarthy',
-      year: 2006,
+      year: '2006',
       read: false,
       readingNow: false,
       lineup: false,
@@ -26,7 +27,7 @@ export const initialState = {
     2: {
       title: 'The Dark Dark',
       author: 'Samantha Hunt',
-      year: 2017,
+      year: '2017',
       read: true,
       readingNow: false,
       lineup: false,
@@ -37,7 +38,7 @@ export const initialState = {
     3: {
       title: 'Bluets',
       author: 'Maggie Nelson',
-      year: 2009,
+      year: '2009',
       read: true,
       readingNow: false,
       lineup: false,
@@ -48,7 +49,7 @@ export const initialState = {
     4: {
       title: 'Too Much and Not the Mood',
       author: 'Durga Chew-Bose',
-      year: 2017,
+      year: '2017',
       read: false,
       readingNow: false,
       lineup: true,
@@ -59,7 +60,7 @@ export const initialState = {
     5: {
       title: 'Sometimes a Great Notion',
       author: 'Ken Kesey',
-      year: 1977,
+      year: '1977',
       read: false,
       readingNow: false,
       lineup: false,
@@ -70,7 +71,7 @@ export const initialState = {
     6: {
       title: 'How We Are Hungry',
       author: 'Dave Eggers',
-      year: 2005,
+      year: '2005',
       read: false,
       readingNow: false,
       lineup: true,
@@ -81,7 +82,7 @@ export const initialState = {
     7: {
       title: 'Pond',
       author: 'Claire Louise-Bennet',
-      year: 2015,
+      year: '2015',
       read: false,
       readingNow: false,
       lineup: false,
@@ -92,7 +93,7 @@ export const initialState = {
     8: {
       title: 'A Manual For Cleaning Women',
       author: 'Lucia Berlin',
-      year: 2015,
+      year: '2015',
       read: false,
       readingNow: false,
       lineup: false,
@@ -103,7 +104,7 @@ export const initialState = {
     9: {
       title: 'The Savage Detectives',
       author: 'Roberto Bolano',
-      year: 2007,
+      year: '2007',
       read: false,
       readingNow: false,
       lineup: false,
@@ -114,12 +115,23 @@ export const initialState = {
     10: {
       title: 'East of Eden',
       author: 'John Steinbeck',
-      year: 1951,
+      year: '1951',
+      read: false,
+      readingNow: false,
+      lineup: true,
+      blurb: 'Ipsum',
+      image: eden,
+      id: 10
+    },
+    11: {
+      title: 'Between the World and Me',
+      author: 'Ta-Nehisi Coates',
+      year: 'June 2015',
       read: false,
       readingNow: false,
       lineup: false,
       blurb: 'Ipsum',
-      image: eden,
+      image: world,
       id: 10
     }
   }

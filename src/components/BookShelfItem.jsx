@@ -18,7 +18,7 @@ function BookShelfItem(props){
         {bookInfo}
       </div>
       <style jsx>{`
-      
+
           .each-book{
             padding: 20px;
           }
@@ -33,7 +33,7 @@ function BookShelfItem(props){
 BookShelfItem.propTypes = {
   title: PropTypes.string,
   author: PropTypes.string,
-  year: PropTypes.number,
+  year: PropTypes.string,
   image: PropTypes.string,
   read: PropTypes.bool,
   readingNow: PropTypes.bool,

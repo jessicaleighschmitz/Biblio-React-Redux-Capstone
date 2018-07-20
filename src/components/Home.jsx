@@ -60,20 +60,12 @@ function Home(props) {
             padding-top: 40px;
             margin: 0;
           }
-          .reading-now-preview{
-            width: 100%;
-            height: 100%;
-            position: absolute;
-            top: 160px;
-            left: 30px;
-            margin-top: 0;
-          }
           .reading-now-preview, .recommended{
             font-family: 'Montserrat', sans-serif;
           }
           .recommended{
             margin-left: 20px;
-            margin-top: 200px;
+            margin-top: 20px;
           }
           .home-grid{
             display: grid;

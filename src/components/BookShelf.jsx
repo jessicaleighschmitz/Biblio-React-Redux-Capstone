@@ -60,17 +60,9 @@ function BookShelf(props) {
           padding-top: 40px;
           margin-top: 0;
         }
-        .reading-now-preview{
-          width: 100%;
-          height: 100%;
-          position: absolute;
-          top: 160px;
-          left: 30px;
-          margin-top: 0;
-        }
         .book-list{
           font-family: 'Montserrat', sans-serif;
-          margin: 200px 0 0 20px;
+          margin: 20px 0 0 20px;
         }
         .bookshelf-grid{
           display: grid;
