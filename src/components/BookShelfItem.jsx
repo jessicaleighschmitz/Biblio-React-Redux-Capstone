@@ -14,9 +14,12 @@ function BookShelfItem(props){
     </div>;
   return(
     <div>
-      <div>
+      <div className='list'>
         {bookInfo}
       </div>
+      <style jsx>{`
+
+      `}</style>
     </div>
   );
 }

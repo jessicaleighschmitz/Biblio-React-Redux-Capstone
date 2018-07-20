@@ -68,6 +68,8 @@ function Home(props) {
           }
           .recommended{
             margin-left: 20px;
+            margin-top: 200px;
+
           }
             `}</style>
     </div>
@@ -83,7 +85,7 @@ Home.propTypes = {
   readingNow: PropTypes.bool,
   blurb: PropTypes.string,
   key: PropTypes.string,
-  id: PropTypes.string
+  id: PropTypes.string,
 };
 
 const mapStateToProps = state => {
