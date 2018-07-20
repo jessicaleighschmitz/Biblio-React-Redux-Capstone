@@ -2,21 +2,12 @@ import React from 'react';
 import Footer from './Footer';
 import ReadingNowPreview from './ReadingNowPreview';
 import headerMain from '././../assets/images/headerMain.png';
-// import { connect } from 'react-redux';
+import { connect } from 'react-redux';
 import PropTypes from 'prop-types';
-// import BookShelfItem from './BookShelfItem';
+import BookShelfItem from './BookShelfItem';
 
 function Home(props) {
-  const bookInfo =
-    <div>
-      <div>
-        <img src={props.image} />
-      </div>
-      <div>
-        <p>{props.title}</p>
-        <em>by {props.author}</em>
-      </div>
-    </div>;
+    console.log(props.selectedBook.bookList);
   return(
     <div>
       <div>
@@ -28,9 +19,17 @@ function Home(props) {
         </div>
         <div className='recommended'>
           <h3>Recommended</h3>
-            <div className='list'>
-              {bookInfo}
-            </div>
+          {Object.keys(props.selectedBook.bookList).map(function(bookId){
+            let book = props.selectedBook.bookList[bookId];
+            console.log(book);
+            return <BookShelfItem
+              title={book.title}
+              image={book.image}
+              author={book.author}
+              key={bookId}
+              id={bookId}
+            />;
+          })}
         </div>
         <Footer />
       </div>
@@ -67,7 +66,6 @@ function Home(props) {
           .recommended{
             margin-left: 20px;
             margin-top: 200px;
-
           }
             `}</style>
     </div>
@@ -87,5 +85,10 @@ Home.propTypes = {
 };
 
 
+const mapStateToProps = state => {
+  return {
+    selectedBook: state.selectedBook,
+  };
+};
 
-export default Home;
+export default connect(mapStateToProps)(Home);
