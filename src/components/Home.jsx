@@ -7,6 +7,8 @@ import BookShelfItem from './BookShelfItem';
 import PropTypes from 'prop-types';
 
 function Home(props) {
+  // let optionalSelectedBook = <BookDetail selectedBook={props.bookList[props.selectedBook]}/>;
+console.log(props);
   return(
     <div className='container'>
       <div>
@@ -22,6 +24,8 @@ function Home(props) {
 
             {Object.keys(props.selectedBook.bookList).map(function(bookId){
               let book = props.selectedBook.bookList[bookId];
+              console.log('yello', props.selectedBook);
+              console.log('dfasf', bookId);
               if(!book.read && !book.lineup){
                 return <BookShelfItem
                   title={book.title}
@@ -29,7 +33,7 @@ function Home(props) {
                   author={book.author}
                   key={bookId}
                   id={bookId}
-                  />;
+                />;
               }
             })}
           </div>

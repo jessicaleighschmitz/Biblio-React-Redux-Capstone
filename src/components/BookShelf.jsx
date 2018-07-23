@@ -21,7 +21,6 @@ function BookShelf(props) {
           <div className='bookshelf-grid'>
             {Object.keys(props.selectedBook.bookList).map(function(bookId){
               let book = props.selectedBook.bookList[bookId];
-              console.log(book.read);
               if (book.read){
                 return <BookShelfItem
                   title={book.title}
@@ -29,11 +28,11 @@ function BookShelf(props) {
                   author={book.author}
                   key={bookId}
                   id={bookId}
-                  />;
+                />;
               }
             })}
           </div>
-    </div>
+        </div>
         <Footer />
       </div>
       <style jsx>{`

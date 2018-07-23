@@ -1,20 +1,24 @@
-import constants from "./../../src/constants";
-// import songChangeReducer from './../../src/reducers/songChangeReducer';
-import changeListReducer from './../../src/reducers/selectedBookReducer';
-// import rootReducer from './../../src/reducers/';
+import constants from './../../src/constants';
+import selectedBookReducer from './../../src/reducers/selectedBookReducer';
+import {initialState} from './../../src/constants/InitialState';
+// // import songChangeReducer from './../../src/reducers/songChangeReducer';
+// import changeListReducer from './../../src/reducers/selectedBookReducer';
+import rootReducer from './../../src/reducers/';
 import { createStore } from 'redux';
 
-describe('biblio app', () => {
+// const { initialState } = constants;
+// const store = createStore(selectedBookReducer, bookList);
+
+describe('rootReducer', () => {
+
+    test('Should return default state if no action type is recognized', () => {
+      expect(rootReducer({}, { type: null })).toEqual({
+        selectedBook: {},
+        bookList: {initialState}
+      });
+    });
 
 
-  describe('selectedBookReducer', () => {
-    it('Should accept and return initial state.', () => {
-      expect(selectedBookReducer(initialState.booksById,{ type: null })).toEqual(initialState.booksById);
-
-    })
-  })
-    const { initialState } = constants;
-    const store = createStore(changeListReducer, bookList);
 });
 
 // describe('Karaoke App', () => {

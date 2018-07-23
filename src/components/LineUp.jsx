@@ -16,13 +16,13 @@ function LineUp(props) {
           {Object.keys(props.selectedBook.bookList).map(function(bookId){
             let book = props.selectedBook.bookList[bookId];
             if (book.lineup){
-            return <BookShelfItem
+              return <BookShelfItem
                 title={book.title}
                 image={book.image}
                 author={book.author}
                 key={bookId}
                 id={bookId}
-                />;
+              />;
             }
           })}
         </div>

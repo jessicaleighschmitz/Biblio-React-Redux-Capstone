@@ -1,11 +1,25 @@
 import constants from './../constants';
 const { initialState, types } = constants;
 
-const selectedBookReducer = (state = initialState, action) => {
-  return state;
-};
+// const selectedBookReducer = (state = initialState, action) => {
+//   return state;
+// };
+//
+// export default selectedBookReducer;
 
-export default selectedBookReducer;
+export default (state = initialState, action) => {
+  console.log('hehe', action.newSelectedBookId);
+  switch (action.type) {
+  case 'SELECT_BOOK':
+    let newState = Object.assign({}, state, {
+          bookList: initialState.bookList,
+          selectedBook: action.newSelectedBookId,
+        });
+    return newState;
+  default:
+    return state;
+  }
+};
 
 // const selectedBookReducer = (state = initialState, action) => {
 //   switch (action.type) {

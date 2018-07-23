@@ -19,6 +19,7 @@ function Search(props) {
         </div>
         <div className='search-grid'>
           {Object.keys(props.selectedBook.bookList).map(function(bookId){
+            console.log(bookId);
             let book = props.selectedBook.bookList[bookId];
             return <BookShelfItem
               title={book.title}
