@@ -31,6 +31,7 @@ console.log(props);
                   title={book.title}
                   image={book.image}
                   author={book.author}
+                  blurb={book.blurb}
                   key={bookId}
                   id={bookId}
                 />;

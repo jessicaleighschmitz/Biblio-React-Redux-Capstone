@@ -12,7 +12,18 @@ function BookShelfItem(props){
     optionalSelectedBook = <BookDetail
        title={props.title}
        image={props.image}
-       author={props.author}/>;
+       author={props.author}
+       blurb={props.blurb}/>;
+  }
+
+//function does not yet work
+  function hide(){
+    let test = document.getElementsByClassName('all-books_null');
+    if(test.style.display === 'block'){
+        test.style.display = 'none';
+    } else {
+      test.style.display = 'block';
+    }
   }
 
 function handleSavingSelectedBook(bookId){
@@ -30,17 +41,18 @@ function handleSavingSelectedBook(bookId){
     <div>
       <div className='each-book' onClick={() => handleSavingSelectedBook(props.id)}>
         {optionalSelectedBook}
-        <div>
-          <img src={props.image} />
-        </div>
-        <div>
-          <p className='title'>{props.title}</p>
-          <em>by {props.author}</em>
+        <div className='all-books_null' onClick={() => hide()}>
+          <div>
+            <img src={props.image} />
+          </div>
+          <div>
+            <p className='title'>{props.title}</p>
+            <em>by {props.author}</em>
+          </div>
         </div>
       </div>
 
       <style jsx>{`
-
           .each-book{
             padding: 20px;
           }

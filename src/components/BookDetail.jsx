@@ -24,7 +24,6 @@ function BookDetail(props){
         <div>
           <p>{props.blurb}</p>
         </div>
-
       </div>
     </div>
   );
