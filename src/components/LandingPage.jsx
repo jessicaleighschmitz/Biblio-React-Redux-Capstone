@@ -28,7 +28,7 @@ function LandingPage() {
           background-repeat: no-repeat;
           background-position: center bottom;
           background-size: cover;
-          height: 100%;
+          min-height: 100px;
           width: 100%;
           min-height: 800px;
 

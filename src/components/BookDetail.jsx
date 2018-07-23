@@ -6,7 +6,25 @@ function BookDetail(props){
   return(
     <div>
       <div>
-        <p>{props.title}</p>
+        <div>
+          <img src={props.image}/>
+        </div>
+        <div>
+          <p>{props.title}</p>
+        </div>
+        <div>
+          <em>{props.author}</em>
+        </div>
+        <div>
+          <p>{props.year}</p>
+        </div>
+        <div>
+          <button type='text'>TESTING</button>
+        </div>
+        <div>
+          <p>{props.blurb}</p>
+        </div>
+
       </div>
     </div>
   );
