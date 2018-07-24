@@ -5,8 +5,6 @@ import { HashRouter } from 'react-router-dom';
 import { createStore } from 'redux';
 import { Provider } from 'react-redux';
 import rootReducer from './reducers';
-import selectedBookReducer from './reducers/selectedBookReducer';
-import initialState from './constants/InitialState';
 
 
 const store = createStore(rootReducer);

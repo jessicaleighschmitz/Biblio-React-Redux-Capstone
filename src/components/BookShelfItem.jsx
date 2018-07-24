@@ -20,45 +20,24 @@ function BookShelfItem(props){
   };
 
   let optionalSelectedBook = null;
-  // let modalIsOpen = false;
 
   if(props.selectedBook === props.id){
     optionalSelectedBook =
-    <Modal
-      style={customStyles}
-      isOpen={props.modalToggle}>
-      <BookDetail
-        title={props.title}
-        image={props.image}
-        author={props.author}
-        blurb={props.blurb}
-        year={props.year}
+      <Modal
+        style={customStyles}
+        isOpen={props.modalToggle}>
+        <BookDetail
+          title={props.title}
+          image={props.image}
+          author={props.author}
+          blurb={props.blurb}
+          year={props.year}
         />
-    </Modal>;
-    }
+      </Modal>;
+  }
 
 
-
-
-// <ReactModal
-//   if(props.selectedBook === 'null'){
-//     isOpen={false}
-//   }
-
-
-  //function does not yet work
-  // function hide(){
-  //   let test = document.getElementsByClassName('all-books');
-  //   if(test.style.display === 'block'){
-  //     console.log('hello');
-  //     test.style.display = 'none';
-  //   } else {
-  //     test.style.display = 'block';
-  //   }
-  // }
-  // onClick={() => hide()}
-
-  function handleSavingSelectedBook(id){
+  function handleSavingSelectedBook(){
     const { dispatch } = props;
     const action1 = {
       type: 'SELECT_BOOK',
@@ -74,7 +53,7 @@ function BookShelfItem(props){
 
   return(
     <div>
-      <div className='each-book' onClick={() => handleSavingSelectedBook()}>
+      <div className='each-book' onClick={ handleSavingSelectedBook}>
         <div className='all-books'>
           <div>
             <img className='img' src={props.image} />

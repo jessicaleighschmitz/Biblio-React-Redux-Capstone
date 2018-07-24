@@ -18,9 +18,8 @@ function Search(props) {
           <input type='text' placeholder='Title, Author, ISBN' />
         </div>
         <div className='search-grid'>
-          {Object.keys(props.selectedBook.bookList).map(function(bookId){
-            console.log(bookId);
-            let book = props.selectedBook.bookList[bookId];
+          {Object.keys(props.bookList).map(function(bookId){
+            let book = props.bookList[bookId];
             return <BookShelfItem
               title={book.title}
               image={book.image}
@@ -89,6 +88,8 @@ function Search(props) {
 
 Search.propTypes = {
   selectedBook: PropTypes.object,
+  bookList: PropTypes.object,
+  modalToggle: PropTypes.bool
 };
 
 
@@ -96,6 +97,8 @@ const mapStateToProps = state => {
   return {
     selectedBook: state.selectedBook,
     bookList: state.bookList,
+    modalToggle: state.modalToggle
+
   };
 };
 

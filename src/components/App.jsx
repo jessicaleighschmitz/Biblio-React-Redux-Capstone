@@ -6,6 +6,7 @@ import Home from './Home';
 import BookShelf from './BookShelf';
 import Search from './Search';
 import LineUp from './LineUp';
+import AddBook from './AddBook';
 
 
 
@@ -19,6 +20,7 @@ function App(){
         <Route path='/bookshelf' component={BookShelf} />
         <Route path='/search' component={Search} />
         <Route path='/lineup' component={LineUp} />
+        <Route path='/addBook' component={AddBook} />
       </Switch>
     </div>
   );

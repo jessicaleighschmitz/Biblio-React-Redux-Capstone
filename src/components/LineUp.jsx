@@ -13,8 +13,8 @@ function LineUp(props) {
           <h1>Line Up</h1>
         </div>
         <div className='lineup-grid'>
-          {Object.keys(props.selectedBook.bookList).map(function(bookId){
-            let book = props.selectedBook.bookList[bookId];
+          {Object.keys(props.bookList).map(function(bookId){
+            let book = props.bookList[bookId];
             if (book.lineup){
               return <BookShelfItem
                 title={book.title}
@@ -75,6 +75,8 @@ function LineUp(props) {
 
 LineUp.propTypes = {
   selectedBook: PropTypes.object,
+  bookList: PropTypes.object,
+  modalToggle: PropTypes.bool
 };
 
 const mapStateToProps = state => {

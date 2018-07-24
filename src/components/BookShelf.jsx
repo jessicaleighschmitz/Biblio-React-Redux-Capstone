@@ -19,8 +19,8 @@ function BookShelf(props) {
         <div className='book-list'>
           <h3>Your Completed Shelf</h3>
           <div className='bookshelf-grid'>
-            {Object.keys(props.selectedBook.bookList).map(function(bookId){
-              let book = props.selectedBook.bookList[bookId];
+            {Object.keys(props.bookList).map(function(bookId){
+              let book = props.bookList[bookId];
               if (book.read){
                 return <BookShelfItem
                   title={book.title}
@@ -79,11 +79,15 @@ function BookShelf(props) {
 
 BookShelf.propTypes = {
   selectedBook: PropTypes.string,
+  bookList: PropTypes.object,
+  modalToggle: PropTypes.bool
 };
 
 const mapStateToProps = state => {
   return {
     selectedBook: state.selectedBook,
+    bookList: state.bookList,
+    modalToggle: state.modalToggle
   };
 };
 

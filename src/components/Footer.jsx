@@ -29,7 +29,7 @@ function Footer(){
             <p className='footer-p'>Line Up</p>
           </div>
         </Link>
-        <Link to='./search' style={{textDecoration: 'none'}}>
+        <Link to='/search' style={{textDecoration: 'none'}}>
           <div className='search flex'>
             <img className='footer-img' src={searchIcon} alt='search icon' />
             <p className='footer-p'>Search</p>

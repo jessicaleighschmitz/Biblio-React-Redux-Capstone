@@ -24,9 +24,9 @@ function Home(props) {
 
             {Object.keys(props.bookList).map(function(bookId){
               let book = props.bookList[bookId];
-              // console.log('yello', props.selectedBook);
               // console.log('dfasf', bookId);
               if(!book.read && !book.lineup){
+                console.log('yello', book.read);
                 return <BookShelfItem
                   title={book.title}
                   image={book.image}
