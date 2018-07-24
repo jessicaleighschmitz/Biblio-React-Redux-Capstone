@@ -2,7 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
 import BookDetail from './BookDetail';
-import ReactModal from 'react-modal';
+import Modal from 'react-modal';
 
 
 function BookShelfItem(props){
@@ -14,7 +14,8 @@ function BookShelfItem(props){
       right: 'auto',
       bottom: 'auto',
       marginRight: '-50%',
-      transform: 'translate(-50%, -50%)'
+      transform: 'translate(-50%, -50%)',
+      maxWidth: '450px'
     }
   };
 
@@ -23,6 +24,9 @@ function BookShelfItem(props){
 
   if(props.selectedBook === props.id){
     optionalSelectedBook =
+    <Modal
+      style={customStyles}
+      isOpen={props.modalToggle}>
       <BookDetail
         title={props.title}
         image={props.image}
@@ -30,7 +34,11 @@ function BookShelfItem(props){
         blurb={props.blurb}
         year={props.year}
         />
+    </Modal>;
     }
+
+
+
 
 // <ReactModal
 //   if(props.selectedBook === 'null'){
@@ -50,14 +58,19 @@ function BookShelfItem(props){
   // }
   // onClick={() => hide()}
 
-  function handleSavingSelectedBook(){
+  function handleSavingSelectedBook(id){
     const { dispatch } = props;
-    const action = {
+    const action1 = {
       type: 'SELECT_BOOK',
       newSelectedBookId: props.id
     };
-    dispatch(action);
+    dispatch(action1);
+    const action2 = {
+      type: 'TOGGLE_MODAL',
+    };
+    dispatch(action2);
   }
+
 
   return(
     <div>
@@ -105,7 +118,7 @@ BookShelfItem.propTypes = {
   key: PropTypes.string,
   id: PropTypes.string,
   selectedBook: PropTypes.string,
-  modalIsOpen: PropTypes.bool,
+  modalToggle: PropTypes.bool,
   bookList: PropTypes.object
 };
 
@@ -113,6 +126,7 @@ const mapStateToProps = state => {
   return {
     selectedBook: state.selectedBook,
     bookList: state.bookList,
+    modalToggle: state.modalToggle
   };
 };
 

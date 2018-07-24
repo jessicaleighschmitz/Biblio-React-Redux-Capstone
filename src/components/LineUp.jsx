@@ -80,6 +80,8 @@ LineUp.propTypes = {
 const mapStateToProps = state => {
   return {
     selectedBook: state.selectedBook,
+    modalToggle: PropTypes.bool,
+    bookList: state.bookList,
   };
 };
 

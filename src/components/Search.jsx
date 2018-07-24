@@ -95,6 +95,7 @@ Search.propTypes = {
 const mapStateToProps = state => {
   return {
     selectedBook: state.selectedBook,
+    bookList: state.bookList,
   };
 };
 

@@ -12,6 +12,7 @@ import world from './../assets/images/coates.jpg';
 
 export const initialState = {
   selectedBook: null,
+  modalToggle: false,
   bookList: {
     1: {
       title: 'The Road',

@@ -88,14 +88,16 @@ function Home(props) {
 
 Home.propTypes = {
   selectedBook: PropTypes.string,
-  bookList: PropTypes.object
+  bookList: PropTypes.object,
+  modalToggle: PropTypes.bool
 };
 
 
 const mapStateToProps = state => {
   return {
     selectedBook: state.selectedBook,
-    bookList: state.bookList
+    bookList: state.bookList,
+    modalToggle: state.modalToggle
 
   };
 };

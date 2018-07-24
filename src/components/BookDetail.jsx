@@ -4,19 +4,18 @@ import { connect } from 'react-redux';
 
 function BookDetail(props){
 
-  // function handleModalClose(){
-  //   const { dispatch } = props;
-  //   const action = {
-  //     type: 'SELECT_BOOK',
-  //     modalIsOpen: false
-  //   };
-  //   dispatch(action);
-  // }
+  function handleModalClose(){
+    const { dispatch } = props;
+    const action = {
+      type: 'TOGGLE_MODAL',
+    };
+    dispatch(action);
+  }
 
   return(
     <div>
       <div className='details'>
-        <div>
+        <div onClick={handleModalClose}>
           <button type='text'>yolo</button>
         </div>
         <div>
@@ -47,7 +46,7 @@ BookDetail.propTypes = {
   blurb: PropTypes.string,
   key: PropTypes.string,
   id: PropTypes.string,
-  modalIsOpen: PropTypes.bool,
+  modalToggle: PropTypes.bool,
 };
 
 const mapStateToProps = state => {
