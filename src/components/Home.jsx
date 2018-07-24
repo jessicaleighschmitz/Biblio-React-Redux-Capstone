@@ -8,7 +8,7 @@ import PropTypes from 'prop-types';
 
 function Home(props) {
   // let optionalSelectedBook = <BookDetail selectedBook={props.bookList[props.selectedBook]}/>;
-console.log(props);
+  // console.log(props);
   return(
     <div className='container'>
       <div>
@@ -22,15 +22,16 @@ console.log(props);
           <h3>Recommended</h3>
           <div className='home-grid'>
 
-            {Object.keys(props.selectedBook.bookList).map(function(bookId){
-              let book = props.selectedBook.bookList[bookId];
-              console.log('yello', props.selectedBook);
-              console.log('dfasf', bookId);
+            {Object.keys(props.bookList).map(function(bookId){
+              let book = props.bookList[bookId];
+              // console.log('yello', props.selectedBook);
+              // console.log('dfasf', bookId);
               if(!book.read && !book.lineup){
                 return <BookShelfItem
                   title={book.title}
                   image={book.image}
                   author={book.author}
+                  year={book.year}
                   blurb={book.blurb}
                   key={bookId}
                   id={bookId}
@@ -64,6 +65,7 @@ console.log(props);
             text-align: center;
             padding-top: 40px;
             margin: 0;
+            text-shadow: 2px 4px 3px rgba(0,0,0,0.18);
           }
           .reading-now-preview, .recommended{
             font-family: 'Montserrat', sans-serif;
@@ -74,7 +76,7 @@ console.log(props);
           }
           .home-grid{
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(170px, 1fr));
+            grid-template-columns: repeat(auto-fit, minmax(190px, 1fr));
             grid-gap: 10px;
             grid-auto-flow: dense;
 
@@ -85,13 +87,16 @@ console.log(props);
 }
 
 Home.propTypes = {
-  selectedBook: PropTypes.object,
+  selectedBook: PropTypes.string,
+  bookList: PropTypes.object
 };
 
 
 const mapStateToProps = state => {
   return {
     selectedBook: state.selectedBook,
+    bookList: state.bookList
+
   };
 };
 

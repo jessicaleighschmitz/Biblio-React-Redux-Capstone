@@ -7,14 +7,11 @@ const { initialState, types } = constants;
 //
 // export default selectedBookReducer;
 
-export default (state = initialState, action) => {
-  console.log('hehe', action.newSelectedBookId);
+export default (state = initialState.selectedBook, action) => {
+
   switch (action.type) {
   case 'SELECT_BOOK':
-    let newState = Object.assign({}, state, {
-          bookList: initialState.bookList,
-          selectedBook: action.newSelectedBookId,
-        });
+    let newState = action.newSelectedBookId;
     return newState;
   default:
     return state;

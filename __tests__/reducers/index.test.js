@@ -1,25 +1,28 @@
-import constants from './../../src/constants';
 import selectedBookReducer from './../../src/reducers/selectedBookReducer';
-import {initialState} from './../../src/constants/InitialState';
+
+
+
+
+// import constants from './../../src/constants';
 // // import songChangeReducer from './../../src/reducers/songChangeReducer';
 // import changeListReducer from './../../src/reducers/selectedBookReducer';
-import rootReducer from './../../src/reducers/';
-import { createStore } from 'redux';
+// import rootReducer from './../../src/reducers/';
+// import { createStore } from 'redux';
 
 // const { initialState } = constants;
 // const store = createStore(selectedBookReducer, bookList);
 
-describe('rootReducer', () => {
-
-    test('Should return default state if no action type is recognized', () => {
-      expect(rootReducer({}, { type: null })).toEqual({
-        selectedBook: {},
-        bookList: {initialState}
-      });
-    });
-
-
-});
+// describe('rootReducer', () => {
+//
+//     test('Should return default state if no action type is recognized', () => {
+//       expect(rootReducer({}, { type: null })).toEqual({
+//         selectedBook: {},
+//         bookList: {initialState}
+//       });
+//     });
+//
+//
+// });
 
 // describe('Karaoke App', () => {
 //

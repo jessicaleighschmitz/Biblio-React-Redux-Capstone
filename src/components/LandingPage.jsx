@@ -42,6 +42,7 @@ function LandingPage() {
           font-size: 7rem;
           font-family: 'Lobster', cursive;
           margin: 0;
+          text-shadow: 2px 4px 3px rgba(0,0,0,0.18);
         }
         .main-header p{
           font-size: 1.6rem;

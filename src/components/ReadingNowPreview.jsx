@@ -24,10 +24,15 @@ function ReadingNowPreview (){
         }
         img{
           max-height: 200px;
+          box-shadow: 0 2px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24);
+          transition: all 0.3s cubic-bezier(.25,.8,.25,1);
+        }
+        img:hover{
+          box-shadow: 0 14px 28px rgba(0,0,0,0.25), 0 10px 10px rgba(0,0,0,0.22);
         }
         .reading-now-img{
           max-height: 150px;
-          padding-left: 20px;
+          margin-left: 20px;
         }
         .reading-now-flex{
           display: flex;

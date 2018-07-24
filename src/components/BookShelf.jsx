@@ -26,6 +26,8 @@ function BookShelf(props) {
                   title={book.title}
                   image={book.image}
                   author={book.author}
+                  year={book.year}
+                  blurb={book.blurb}
                   key={bookId}
                   id={bookId}
                 />;
@@ -58,6 +60,7 @@ function BookShelf(props) {
           text-align: center;
           padding-top: 40px;
           margin-top: 0;
+          text-shadow: 2px 4px 3px rgba(0,0,0,0.18);
         }
         .book-list{
           font-family: 'Montserrat', sans-serif;
@@ -75,7 +78,7 @@ function BookShelf(props) {
 }
 
 BookShelf.propTypes = {
-  selectedBook: PropTypes.object,
+  selectedBook: PropTypes.string,
 };
 
 const mapStateToProps = state => {

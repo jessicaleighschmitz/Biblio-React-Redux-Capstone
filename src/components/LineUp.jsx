@@ -20,6 +20,8 @@ function LineUp(props) {
                 title={book.title}
                 image={book.image}
                 author={book.author}
+                year={book.year}
+                blurb={book.blurb}
                 key={bookId}
                 id={bookId}
               />;
@@ -55,7 +57,9 @@ function LineUp(props) {
           font-size: 2.6rem;
           text-align: center;
           padding-top: 40px;
-        } img{
+          text-shadow: 2px 4px 3px rgba(0,0,0,0.18);
+        }
+        img{
           max-height: 200px;
         }
         .lineup-grid{

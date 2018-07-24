@@ -13,25 +13,25 @@ function Footer(){
       <div className='footer-container'>
         <Link to='/home' style={{textDecoration: 'none'}}>
           <div className='home flex'>
-            <img src={home1} alt='home icon' />
+            <img className='footer-img' src={home1} alt='home icon' />
             <p className='footer-p'>Home</p>
           </div>
         </Link>
         <Link to='/bookshelf' style={{textDecoration: 'none'}}>
           <div className='bookshelf flex'>
-            <img src={bookshelfIcon} alt='bookshelf icon' />
+            <img className='footer-img' src={bookshelfIcon} alt='bookshelf icon' />
             <p className='footer-p'>Bookshelf</p>
           </div>
         </Link>
         <Link to='/lineup' style={{textDecoration: 'none'}}>
           <div className='lineup flex'>
-            <img src={bookOpen} alt='line up icon' />
+            <img className='footer-img' src={bookOpen} alt='line up icon' />
             <p className='footer-p'>Line Up</p>
           </div>
         </Link>
         <Link to='./search' style={{textDecoration: 'none'}}>
           <div className='search flex'>
-            <img src={searchIcon} alt='search icon' />
+            <img className='footer-img' src={searchIcon} alt='search icon' />
             <p className='footer-p'>Search</p>
           </div>
         </Link>
@@ -40,7 +40,6 @@ function Footer(){
           @import url('https://fonts.googleapis.com/css?family=Lobster|Montserrat');
           .footer-container{
             display: flex;
-            max-width: 400px;
             justify-content: space-between;
             margin: 15px 30px;
             position: relative;
@@ -55,6 +54,12 @@ function Footer(){
             display: flex;
             flex-direction: column;
             align-items: center;
+          }
+          .footer-img{
+            box-shadow: none;
+          }
+          .footer-img:hover{
+            box-shadow: none;
           }
           `}
       </style>

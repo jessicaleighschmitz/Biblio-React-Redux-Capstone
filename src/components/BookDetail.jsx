@@ -1,36 +1,61 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import { connect } from 'react-redux';
 
 function BookDetail(props){
-  console.log('yodel', props.title);
+
+  // function handleModalClose(){
+  //   const { dispatch } = props;
+  //   const action = {
+  //     type: 'SELECT_BOOK',
+  //     modalIsOpen: false
+  //   };
+  //   dispatch(action);
+  // }
+
   return(
     <div>
-      <div>
+      <div className='details'>
         <div>
-          <img src={props.image}/>
-        </div>
-        <div>
-          <p>{props.title}</p>
-        </div>
-        <div>
-          <em>{props.author}</em>
+          <button type='text'>yolo</button>
         </div>
         <div>
           <p>{props.year}</p>
         </div>
         <div>
-          <button type='text'>TESTING</button>
-        </div>
-        <div>
           <p>{props.blurb}</p>
         </div>
       </div>
+      <style jsx>{`
+          .details{
+            min-width: 300px;
+            font-size: .8rem;
+          }
+            `}</style>
     </div>
   );
 }
 
 BookDetail.propTypes = {
-  selectedBook: PropTypes.object
+  selectedBook: PropTypes.string,
+  title: PropTypes.string,
+  author: PropTypes.string,
+  year: PropTypes.string,
+  image: PropTypes.string,
+  read: PropTypes.bool,
+  readingNow: PropTypes.bool,
+  blurb: PropTypes.string,
+  key: PropTypes.string,
+  id: PropTypes.string,
+  modalIsOpen: PropTypes.bool,
 };
 
-export default BookDetail;
+const mapStateToProps = state => {
+  return {
+    selectedBook: state.selectedBook,
+    bookList: state.bookList,
+    modalIsOpen: state.modalIsOpen
+  };
+};
+
+export default connect(mapStateToProps)(BookDetail);
