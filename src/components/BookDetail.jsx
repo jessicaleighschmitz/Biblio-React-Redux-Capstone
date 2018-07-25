@@ -34,7 +34,7 @@ function BookDetail(props){
     <div>
       <div className='details'>
         <div onClick={handleModalClose}>
-          <button type='text'>X</button>
+          <button className='exit' type='text'>X</button>
         </div>
         <div className='image'>
           <img src={props.image} alt='cover image'/>
@@ -51,13 +51,10 @@ function BookDetail(props){
         <div className='blurb'>
           <p>{props.blurb}</p>
         </div>
-
-        <div className='modal-button'>
-          <p>Add to:</p>
-          <button onClick={handleBookBeingRead} type='button'>Bookshelf</button>
-          <button onClick={handleBookBeingWanted} type='button'>Line Up</button>
-        </div>
-
+          <div className='modal-button'>
+            <button className='button-bookshelf' onClick={handleBookBeingRead} type='button'>I've read this book</button>
+            <button className='button-lineup' onClick={handleBookBeingWanted} type='button'>Save for later</button>
+          </div>
       </div>
       <style jsx>{`
           @import url('https://fonts.googleapis.com/css?family=Lobster|Montserrat:400,600');
@@ -90,17 +87,63 @@ function BookDetail(props){
           }
           .blurb p{
             font-size: .8rem;
+            margin: 40px 0;
           }
           p{
             font-family: Montserrat;
           }
-          .modal-button button{
-            background-color: #F8C170;
+          .button-bookshelf{
             border-radius: 6px;
             height: 30px;
-            width: 120px;
+            width: 200px;
+            margin: 0 0 20px;
+            cursor: pointer;
+            color: #F8C170;
+            font-size: 1rem;
+            border:none;
+            text-transform: uppercase;
+          }
+          .button-lineup{
+            background-color: #F8C170;
+            border-radius: 8px;
+            height: 30px;
+            width: 200px;
             color: #fff;
-            font-size: 1.125rem;
+            font-size: 1rem;
+            margin: 0 0 20px;
+            cursor: pointer;
+            transition:800ms ease background-color;
+            outline:none;
+            border: none;
+            text-transform: uppercase;
+          }
+          .button-lineup:hover{
+              background:#fff;
+              color:#F8C170;
+              border: 1.5px solid #F8C170;
+          }
+          .modal-button{
+            display: flex;
+            justify-content: space-around;
+          }
+          .exit{
+            border: none;
+            font-size: 1.5rem;
+            color: #F8C170;
+            display: inline-block;
+            vertical-align: middle;
+            -webkit-transform: perspective(1px) translateZ(0);
+            transform: perspective(1px) translateZ(0);
+            box-shadow: 0 0 1px rgba(0, 0, 0, 0);
+            -webkit-transition-duration: 0.3s;
+            transition-duration: 0.3s;
+            -webkit-transition-property: transform;
+            transition-property: transform;
+          }
+          .exit:hover, .exit:focus, .exit:active{
+            -webkit-transform: scale(1.3);
+            transform: scale(1.3);
+            font-weight: 600;
           }
             `}</style>
     </div>

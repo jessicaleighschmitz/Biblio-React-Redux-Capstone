@@ -82,6 +82,7 @@ function BookShelfItem(props){
           .title{
             font-weight: bold;
             max-width: 135px;
+            margin: 16px 0 8px;
           }
           p, em{
             color: #4A4A4A;

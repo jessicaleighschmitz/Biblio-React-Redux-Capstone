@@ -73,17 +73,25 @@ function LandingPage() {
           width: 123px;
           height: 33px;
           margin-top: 23px;
+          color: #fff;
+          font-weight: bold;
+          font-size: 18px;
+          cursor: pointer;
+          transition:800ms ease background-color;
+          outline:none;
+          border: none;
+          text-transform: uppercase;
+        }
+        button:hover{
+          background:#fff;
+          color:#F8C170;
+          border: 1.5px solid #F8C170;
         }
         .login{
           display: flex;
           flex-wrap: wrap;
           flex-direction: column;
           align-items: center;
-        }
-        button{
-          color: #fff;
-          font-weight: bold;
-          font-size: 18px;
         }
 
             `}
