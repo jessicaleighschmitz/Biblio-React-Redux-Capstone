@@ -52,7 +52,7 @@ function BookDetail(props){
           <p>{props.blurb}</p>
         </div>
 
-        <div>
+        <div className='modal-button'>
           <p>Add to:</p>
           <button onClick={handleBookBeingRead} type='button'>Bookshelf</button>
           <button onClick={handleBookBeingWanted} type='button'>Line Up</button>
@@ -93,6 +93,14 @@ function BookDetail(props){
           }
           p{
             font-family: Montserrat;
+          }
+          .modal-button button{
+            background-color: #F8C170;
+            border-radius: 6px;
+            height: 30px;
+            width: 120px;
+            color: #fff;
+            font-size: 1.125rem;
           }
             `}</style>
     </div>
