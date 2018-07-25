@@ -32,6 +32,7 @@ function BookShelfItem(props){
           author={props.author}
           blurb={props.blurb}
           year={props.year}
+          id={props.id}
         />
       </Modal>;
   }

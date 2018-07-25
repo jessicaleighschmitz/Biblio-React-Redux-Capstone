@@ -2,7 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
 // import { Link } from 'react-router-dom';
-import AddBook from './AddBook';
+
 
 function BookDetail(props){
 
@@ -16,13 +16,23 @@ function BookDetail(props){
     dispatch(action);
   }
 
-  function handleBookBeingRead(){
+  function handleBookBeingRead(id){
     console.log('heya');
     const { dispatch } = props;
     const action1 = {
       type: 'READ_BOOK',
+      id: props.id
     };
     dispatch(action1);
+  }
+  function handleBookBeingWanted(id){
+    console.log('heya');
+    const { dispatch } = props;
+    const action2 = {
+      type: 'WANT_TO_READ',
+      id: props.id
+    };
+    dispatch(action2);
   }
 
   return(
@@ -47,9 +57,11 @@ function BookDetail(props){
           <p>{props.blurb}</p>
         </div>
 
-          <div>
-            <button onClick={handleBookBeingRead} type='button'>Save Book</button>
-          </div>
+        <div>
+          <p>Add to:</p>
+          <button onClick={handleBookBeingRead} type='button'>Bookshelf</button>
+          <button onClick={handleBookBeingWanted} type='button'>Line Up</button>
+        </div>
 
       </div>
       <style jsx>{`

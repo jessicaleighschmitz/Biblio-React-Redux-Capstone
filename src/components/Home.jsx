@@ -26,7 +26,6 @@ function Home(props) {
               let book = props.bookList[bookId];
               // console.log('dfasf', bookId);
               if(!book.read && !book.lineup){
-                console.log('yello', book.read);
                 return <BookShelfItem
                   title={book.title}
                   image={book.image}
