@@ -11,14 +11,14 @@ function ReadingNowPreview (){
             <img src={cleaning} className='reading-now-img' alt='reading now book' />
           </div>
           <div className='reading-now-text'>
-            <p>A Manual for Cleaning Women</p>
+            <p className='reading-now-title'>A Manual for Cleaning Women</p>
             <em>by Lucia Berlin</em>
             <p>August 2015</p>
           </div>
         </div>
       </div>
       <style jsx>{`
-          @import url('https://fonts.googleapis.com/css?family=Montserrat');
+        @import url('https://fonts.googleapis.com/css?family=Lobster|Montserrat:400,600');
         .reading-now{
           font-family: 'Montserrat', sans-serif;
         }
@@ -42,6 +42,13 @@ function ReadingNowPreview (){
         }
         .reading-now-h3{
           padding-left: 20px;
+        }
+        .reading-now-title{
+          font-weight: 600;
+          font-size:1.2rem;
+        }
+        em{
+          font-size: .9rem;
         }
 
       `}</style>

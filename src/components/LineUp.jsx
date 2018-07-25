@@ -33,7 +33,7 @@ function LineUp(props) {
         </div>
       </div>
       <style jsx>{`
-        @import url('https://fonts.googleapis.com/css?family=Lobster|Montserrat');
+        @import url('https://fonts.googleapis.com/css?family=Lobster|Montserrat:400,600');
         .container{
           max-width: 600px;
           margin: auto;
@@ -74,9 +74,10 @@ function LineUp(props) {
 }
 
 LineUp.propTypes = {
-  selectedBook: PropTypes.object,
+  selectedBook: PropTypes.string,
   bookList: PropTypes.object,
-  modalToggle: PropTypes.bool
+  modalToggle: PropTypes.func,
+  dispatch: PropTypes.func
 };
 
 const mapStateToProps = state => {

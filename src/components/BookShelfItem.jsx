@@ -46,15 +46,15 @@ function BookShelfItem(props){
     };
     dispatch(action1);
     const action2 = {
-      type: 'TOGGLE_MODAL',
+      type: 'TOGGLE_MODAL_ON',
     };
     dispatch(action2);
   }
 
 
   return(
-    <div>
-      <div className='each-book' onClick={ handleSavingSelectedBook}>
+    <div className='container'>
+      <div className='each-book' onClick={handleSavingSelectedBook}>
         <div className='all-books'>
           <div>
             <img className='img' src={props.image} />
@@ -68,6 +68,7 @@ function BookShelfItem(props){
       </div>
 
       <style jsx>{`
+          @import url('https://fonts.googleapis.com/css?family=Lobster|Montserrat:400,600');
           .each-book{
             padding: 20px;
           }
@@ -80,6 +81,16 @@ function BookShelfItem(props){
           }
           .title{
             font-weight: bold;
+            max-width: 135px;
+          }
+          p, em{
+            color: #4A4A4A;
+          }
+          em{
+            font-size: .85rem;
+          }
+          .container{
+            margin: auto;
           }
 
       `}</style>
@@ -99,7 +110,8 @@ BookShelfItem.propTypes = {
   id: PropTypes.string,
   selectedBook: PropTypes.string,
   modalToggle: PropTypes.bool,
-  bookList: PropTypes.object
+  bookList: PropTypes.object,
+  dispatch: PropTypes.func
 };
 
 const mapStateToProps = state => {

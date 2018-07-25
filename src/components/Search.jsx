@@ -34,7 +34,7 @@ function Search(props) {
         <Footer />
       </div>
       <style jsx>{`
-        @import url('https://fonts.googleapis.com/css?family=Montserrat');
+        @import url('https://fonts.googleapis.com/css?family=Lobster|Montserrat:400,600');
         .container{
           max-width: 600px;
           margin: auto;
@@ -68,6 +68,11 @@ function Search(props) {
           border-radius: 6px;
           border: none;
           background-color: rgba(248, 193, 112, .8);
+          padding-left: 23px;
+          font-size: .9rem;
+        }
+        input::placeholder{
+          color: #4A4A4A;
         }
         .search-form{
           display: flex;

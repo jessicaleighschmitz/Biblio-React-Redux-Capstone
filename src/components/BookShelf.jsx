@@ -38,7 +38,7 @@ function BookShelf(props) {
         <Footer />
       </div>
       <style jsx>{`
-        @import url('https://fonts.googleapis.com/css?family=Montserrat');
+      @import url('https://fonts.googleapis.com/css?family=Lobster|Montserrat:400,600');
         .container{
           max-width: 600px;
           margin: auto;
@@ -71,6 +71,12 @@ function BookShelf(props) {
           grid-template-columns: repeat(auto-fit, minmax(170px, 1fr));
           grid-gap: 10px;
           grid-auto-flow: dense;
+        }
+        h3{
+          color: #4A4A4A;
+          font-size: 1.4rem;
+          margin-top: 70px;
+          font-weight: bold;
         }
       `}</style>
     </div>

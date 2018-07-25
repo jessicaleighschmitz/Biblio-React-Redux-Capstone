@@ -1,5 +1,5 @@
 import constants from './../constants';
-const { initialState, types } = constants;
+const { initialState } = constants;
 
 export default (state = initialState.bookList, action) => {
 
@@ -16,7 +16,7 @@ export default (state = initialState.bookList, action) => {
       [action.id]: newState
     });
     return newReadBook;
-    case 'WANT_TO_READ':
+  case 'WANT_TO_READ':
     let lineUpState = Object.assign({}, state[action.id],{
       read: false,
       lineup: true

@@ -14,7 +14,7 @@ function LandingPage() {
         </div>
         <div className='login'>
           <input className='username' type='text' placeholder='username' />
-          <input className='password' type='text' placeholder='password' />
+          <input className='password' type='password' placeholder='password' />
           <Link to='/home'><button>Go!</button></Link>
         </div>
       </div>
@@ -22,6 +22,7 @@ function LandingPage() {
           @import url('https://fonts.googleapis.com/css?family=Lobster|Montserrat');
         .container{
           max-width: 600px;
+          margin: auto;
         }
         .main-header{
           background-image: url(${landingPhoto});
@@ -55,10 +56,15 @@ function LandingPage() {
           width: 223px;
           height: 33px;
           margin-top: 23px;
+          font-size: 1.1rem;
+          padding-left: 23px;
+          color: #4a4a4a;
+        }
+        .password{
+          color: #F8C170;
         }
         input::placeholder{
           color: #F8C170;
-          padding-left: 23px;
           font-size: 18px;
         }
         button{

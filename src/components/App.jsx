@@ -14,14 +14,19 @@ import AddBook from './AddBook';
 function App(){
   return (
     <div>
-      <Switch>
-        <Route exact path='/' component={LandingPage} />
-        <Route path='/home' component={Home} />
-        <Route path='/bookshelf' component={BookShelf} />
-        <Route path='/search' component={Search} />
-        <Route path='/lineup' component={LineUp} />
-        <Route path='/addBook' component={AddBook} />
-      </Switch>
+      <div>
+        <Switch>
+          <Route exact path='/' component={LandingPage} />
+          <Route path='/home' component={Home} />
+          <Route path='/bookshelf' component={BookShelf} />
+          <Route path='/search' component={Search} />
+          <Route path='/lineup' component={LineUp} />
+          <Route path='/addBook' component={AddBook} />
+        </Switch>
+      </div>
+      <style jsx>{`
+          @import url('https://fonts.googleapis.com/css?family=Lobster|Montserrat:400,600');
+            `}</style>
     </div>
   );
 }

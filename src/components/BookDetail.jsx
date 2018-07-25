@@ -1,23 +1,19 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
-// import { Link } from 'react-router-dom';
 
 
 function BookDetail(props){
 
-//reducer is not working
   function handleModalClose(){
-    console.log('yo');
     const { dispatch } = props;
     const action = {
-      type: 'TOGGLE_MODAL',
+      type: 'TOGGLE_MODAL_OFF',
     };
     dispatch(action);
   }
 
-  function handleBookBeingRead(id){
-    console.log('heya');
+  function handleBookBeingRead(){
     const { dispatch } = props;
     const action1 = {
       type: 'READ_BOOK',
@@ -25,8 +21,7 @@ function BookDetail(props){
     };
     dispatch(action1);
   }
-  function handleBookBeingWanted(id){
-    console.log('heya');
+  function handleBookBeingWanted(){
     const { dispatch } = props;
     const action2 = {
       type: 'WANT_TO_READ',
@@ -41,19 +36,19 @@ function BookDetail(props){
         <div onClick={handleModalClose}>
           <button type='text'>X</button>
         </div>
-        <div>
+        <div className='image'>
           <img src={props.image} alt='cover image'/>
         </div>
-        <div>
+        <div className='modal-title'>
           <p>{props.title}</p>
         </div>
-        <div>
-          <p>by {props.author}</p>
+        <div className='author'>
+          <em>by {props.author}</em>
         </div>
-        <div>
-          <p>{props.year}</p>
+        <div className='year'>
+          <p>Published: {props.year}</p>
         </div>
-        <div>
+        <div className='blurb'>
           <p>{props.blurb}</p>
         </div>
 
@@ -65,9 +60,39 @@ function BookDetail(props){
 
       </div>
       <style jsx>{`
+          @import url('https://fonts.googleapis.com/css?family=Lobster|Montserrat:400,600');
           .details{
             min-width: 300px;
             font-size: .8rem;
+          }
+          .image{
+            display: flex;
+            justify-content: center;
+            border-bottom: 1px solid #F8C170;
+            padding: 30px;
+          }
+          .image img{
+            box-shadow: 0 14px 28px rgba(0,0,0,0.25), 0 10px 10px rgba(0,0,0,0.22);
+          }
+          .modal-title p{
+            font-weight: 600;
+            font-size: 2rem;
+            margin: 20px 0;
+            font-family: Montserrat;
+          }
+          .author em{
+            font-size: 1.2rem;
+            font-family: Montserrat;
+          }
+          .year{
+            font-size: .8rem;
+            font-family: Montserrat;
+          }
+          .blurb p{
+            font-size: .8rem;
+          }
+          p{
+            font-family: Montserrat;
           }
             `}</style>
     </div>
@@ -86,6 +111,7 @@ BookDetail.propTypes = {
   key: PropTypes.string,
   id: PropTypes.string,
   modalToggle: PropTypes.bool,
+  dispatch: PropTypes.func
 };
 
 const mapStateToProps = state => {
