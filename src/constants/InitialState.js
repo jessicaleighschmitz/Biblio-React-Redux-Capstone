@@ -9,11 +9,15 @@ import road from './../assets/images/road.jpg';
 import savage from './../assets/images/savage.jpg';
 import toomuch from './../assets/images/toomuch.jpg';
 import world from './../assets/images/coates.jpg';
+import orwell from './../assets/images/orwell.jpg';
+import solnit from './../assets/images/solnit.jpg';
+import hiraide from './../assets/images/hiraide.jpg';
+import jufresa from './../assets/images/jufresa.jpg';
+
 
 export const initialState = {
   selectedBook: null,
   modalToggle: false,
-  dropDownOpen: false,
   bookList: {
     1: {
       title: 'The Road',
@@ -134,7 +138,51 @@ export const initialState = {
       lineup: false,
       blurb: 'In a profound work that pivots from the biggest questions about American history and ideals to the most intimate concerns of a father for his son, Ta-Nehisi Coates offers a powerful new framework for understanding our nation’s history and current crisis. Americans have built an empire on the idea of “race,” a falsehood that damages us all but falls most heavily on the bodies of black women and men—bodies exploited through slavery and segregation, and, today, threatened, locked up, and murdered out of all proportion. What is it like to inhabit a black body and find a way to live within it? And how can we all honestly reckon with this fraught history and free ourselves from its burden?',
       image: world,
-      id: 10
+      id: 11
+    },
+    12: {
+      title: '1984',
+      author: 'George Orwell',
+      year: 'June 1949',
+      read: false,
+      readingNow: false,
+      lineup: false,
+      blurb: 'Among the seminal texts of the 20th century, Nineteen Eighty-Four is a rare work that grows more haunting as its futuristic purgatory becomes more real. Published in 1949, the book offers political satirist George Orwells nightmare vision of a totalitarian, bureaucratic world and one poor stiffs attempt to find individuality. The brilliance of the novel is Orwells prescience of modern life-- the ubiquity of television, the distortion of the language--and his ability to construct such a thorough version of hell. ',
+      image: orwell,
+      id: 12
+    },
+    13: {
+      title: 'Men Explain Things to Me',
+      author: 'Rebecca Solnit',
+      year: 'May 2014',
+      read: false,
+      readingNow: false,
+      lineup: false,
+      blurb: 'In her comic, scathing essay, "Men Explain Things to Me," Rebecca Solnit took on what often goes wrong in conversations between men and women. She wrote about men who wrongly assume they know things and wrongly assume women dont, about why this arises, and how this aspect of the gender wars works, airing some of her own hilariously awful encounters.',
+      image: solnit,
+      id: 13
+    },
+    14: {
+      title: 'Umami',
+      author: 'Laia Jufresa',
+      year: 'February 2015',
+      read: false,
+      readingNow: false,
+      lineup: false,
+      blurb: 'Umami constituye una propuesta literaria original en su afán por explorar la amplia gama de sensaciones y emociones que el ser humano -en distintas etapas de la vida- experimenta. Una novela coral en la que los personajes aprenden a reinventarse para hacer frente a las adversidades y superar sus pérdidas.',
+      image: jufresa,
+      id: 14
+    },
+    15: {
+      title: 'The Guest Cat',
+      author: 'Takashi Hiraide',
+      year: 'January 2001',
+      read: false,
+      readingNow: false,
+      lineup: false,
+      blurb: 'A bestseller in France and winner of Japan’s Kiyama Shohei Literary Award, The Guest Cat, by the acclaimed poet Takashi Hiraide, is a subtly moving and exceptionally beautiful novel about the transient nature of life and idiosyncratic but deeply felt ways of living. A couple in their thirties live in a small rented cottage in a quiet part of Tokyo; they work at home, freelance copy-editing; they no longer have very much to say to one another. But one day a cat invites itself into their small kitchen. It leaves, but the next day comes again, and then again and again. Soon they are buying treats for the cat and enjoying talks about the animal and all its little ways. Life suddenly seems to have more promise for the husband and wife — the days have more light and color.',
+      image: hiraide,
+      id: 15
     }
   }
 };
