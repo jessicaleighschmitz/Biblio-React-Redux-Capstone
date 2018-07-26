@@ -13,8 +13,7 @@ module.exports = {
 
   output: {
     filename: 'app.bundle.js',
-    path: resolve(__dirname, 'build'),
-    publicPath: '/'
+    path: resolve(__dirname, 'build')
   },
 
   resolve: {
@@ -25,8 +24,7 @@ module.exports = {
 
   devServer: {
     hot: true,
-    contentBase: resolve(__dirname, 'build'),
-    publicPath: '/'
+    contentBase: resolve(__dirname, 'build')
   },
 
   module: {
@@ -74,7 +72,7 @@ module.exports = {
     new HtmlWebpackPlugin({
       template:'template.ejs',
       appMountId: 'react-app-root',
-      title: 'Redux Karaoke',
+      title: 'Biblio',
       filename: resolve(__dirname, "build", "index.html"),
     }),
   ]
